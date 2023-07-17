@@ -1,0 +1,372 @@
+Assignment for 03-07-2023-------------------->
+
+import java.time.LocalDate;
+
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Policy {
+	
+	 int Policy_id;
+     long Policy_number;
+     String nameofPolicy;
+     LocalDate Policy_Created_date;
+     LocalDate Policy_Due_Date;
+     LocalDate Policy_Payment_Date;
+     String Policy_Status;
+     double Policy_Premium_Amount;
+     double Policy_Maturity_Amount;
+     double Policy_Sum_Assured;
+     int Policy_Tenure;
+     String Policy_Payment_Frequency;
+     String Policy_Payment_Status;
+    
+   
+	
+	
+	
+     @Override
+	public String toString() {
+		return "Policy [Policy_id=" + Policy_id + ", Policy_number=" + Policy_number + ", nameofPolicy=" + nameofPolicy
+				+ ", Policy_Created_date=" + Policy_Created_date + ", Policy_Due_Date=" + Policy_Due_Date
+				+ ", Policy_Payment_Date=" + Policy_Payment_Date + ", Policy_Status=" + Policy_Status
+				+ ", Policy_Premium_Amount=" + Policy_Premium_Amount + ", Policy_Maturity_Amount="
+				+ Policy_Maturity_Amount + ", Policy_Sum_Assured=" + Policy_Sum_Assured + ", Policy_Tenure="
+				+ Policy_Tenure + ", Policy_Payment_Frequency=" + Policy_Payment_Frequency + ", Policy_Payment_Status="
+				+ Policy_Payment_Status + "]";
+	}
+
+     
+     //constructor
+     
+	public Policy(int policy_id, long policy_number,String name, LocalDate policy_Created_date,
+			LocalDate policy_Due_Date, LocalDate policy_Payment_Date, String policy_Status,
+			double policy_Premium_Amount, double policy_Maturity_Amount, double policy_Sum_Assured, int policy_Tenure,
+			String policy_Payment_Frequency, String policy_Payment_Status) {
+		super();
+		Policy_id = policy_id;
+		Policy_number = policy_number;
+		nameofPolicy = name;
+		Policy_Created_date = policy_Created_date;
+		Policy_Due_Date = policy_Due_Date;
+		Policy_Payment_Date = policy_Payment_Date;
+		Policy_Status = policy_Status;
+		Policy_Premium_Amount = policy_Premium_Amount;
+		Policy_Maturity_Amount = policy_Maturity_Amount;
+		Policy_Sum_Assured = policy_Sum_Assured;
+		Policy_Tenure = policy_Tenure;
+		Policy_Payment_Frequency = policy_Payment_Frequency;
+		Policy_Payment_Status = policy_Payment_Status;
+	}
+
+	public int getPolicy_id() {
+		return Policy_id;
+	}
+
+	public void setPolicy_id(int policy_id) {
+		Policy_id = policy_id;
+	}
+
+	public long getPolicy_number() {
+		return Policy_number;
+	}
+
+	public void setPolicy_number(long policy_number) {
+		Policy_number = policy_number;
+	}
+
+	public String getNameofPolicy() {
+		return nameofPolicy;
+	}
+
+	public void setNameofPolicy(String nameofPolicy) {
+		this.nameofPolicy = nameofPolicy;
+	}
+
+	public LocalDate getPolicy_Created_date() {
+		return Policy_Created_date;
+	}
+
+	public void setPolicy_Created_date(LocalDate policy_Created_date) {
+		Policy_Created_date = policy_Created_date;
+	}
+
+	public LocalDate getPolicy_Due_Date() {
+		return Policy_Due_Date;
+	}
+
+	public void setPolicy_Due_Date(LocalDate policy_Due_Date) {
+		Policy_Due_Date = policy_Due_Date;
+	}
+
+	public LocalDate getPolicy_Payment_Date() {
+		return Policy_Payment_Date;
+	}
+
+	public void setPolicy_Payment_Date(LocalDate policy_Payment_Date) {
+		Policy_Payment_Date = policy_Payment_Date;
+	}
+
+	public String getPolicy_Status() {
+		return Policy_Status;
+	}
+
+	public void setPolicy_Status(String policy_Status) {
+		Policy_Status = policy_Status;
+	}
+
+	public double getPolicy_Premium_Amount() {
+		return Policy_Premium_Amount;
+	}
+
+	public void setPolicy_Premium_Amount(double policy_Premium_Amount) {
+		Policy_Premium_Amount = policy_Premium_Amount;
+	}
+
+	public double getPolicy_Maturity_Amount() {
+		return Policy_Maturity_Amount;
+	}
+
+	public void setPolicy_Maturity_Amount(double policy_Maturity_Amount) {
+		Policy_Maturity_Amount = policy_Maturity_Amount;
+	}
+
+	public double getPolicy_Sum_Assured() {
+		return Policy_Sum_Assured;
+	}
+
+	public void setPolicy_Sum_Assured(double policy_Sum_Assured) {
+		Policy_Sum_Assured = policy_Sum_Assured;
+	}
+
+	public int getPolicy_Tenure() {
+		return Policy_Tenure;
+	}
+
+	public void setPolicy_Tenure(int policy_Tenure) {
+		Policy_Tenure = policy_Tenure;
+	}
+
+	public String getPolicy_Payment_Frequency() {
+		return Policy_Payment_Frequency;
+	}
+
+	public void setPolicy_Payment_Frequency(String policy_Payment_Frequency) {
+		Policy_Payment_Frequency = policy_Payment_Frequency;
+	}
+
+	public String getPolicy_Payment_Status() {
+		return Policy_Payment_Status;
+	}
+
+	public void setPolicy_Payment_Status(String policy_Payment_Status) {
+		Policy_Payment_Status = policy_Payment_Status;
+	}
+
+	public static Policy getPolicyinfo(Map<Integer,Policy> mapofpolicy,int Policy_id)
+     {
+    	 Policy returnPolicy=mapofpolicy.get(Policy_id);
+    	 
+    	 return returnPolicy;
+     }
+     
+     public static String getPolicyStatus(Map<Integer,Policy>mapofpolicy,int Policy_id)
+     {
+    	    Policy policy=mapofpolicy.get(Policy_id);                                  // Policy policy = Policy.getPolicyinfo(mapofpolicy, Policy_id);
+    	    return policy.getPolicy_Status();
+     }
+	public static String getPaymentStatus(Map<Integer,Policy>mapofpolicy,int Policy_id)
+        {
+        	Policy policy = Policy.getPolicyinfo(mapofpolicy, Policy_id);
+        	return policy.getPolicy_Payment_Status();
+        }
+
+     public static LocalDate getPaymentduedate(Map<Integer,Policy>mapofpolicy,int Policy_id)
+     {
+    	 Policy policy = Policy.getPolicyinfo(mapofpolicy, Policy_id);
+    	 return policy.getPolicy_Due_Date();
+     }
+   
+
+}
+----------------------------
+
+import java.util.HashMap;
+
+
+
+import java.util.Map;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
+import java.util.*;
+import java.util.Scanner;
+
+
+public class Tester {
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		Map<Integer,Policy> map=new HashMap<>();
+		Policy object1=new Policy(1, 101,"CarInsurance",  LocalDate.of(2023, 07, 24), LocalDate.of(2024, 6, 24), LocalDate.of(2023, 07, 24), "active", 25000, 100000, 125000, 8, "monthly", "paid");
+		Policy object2=new Policy(2, 102,"BikeInsurance" ,LocalDate.of(2023, 07, 24), LocalDate.of(2023, 7, 24), LocalDate.of(2023, 07, 24), "active", 25000, 100000, 125000, 8, "yearly","pending");
+		Policy object3=new Policy(3, 103,"BusInsurance",   LocalDate.of(2023, 07, 24), LocalDate.of(2023, 07, 30), LocalDate.of(2023, 07, 24), "dormant", 25000, 100000, 125000, 8, "weekly", "pending");
+		Policy object4=new Policy(4, 104,"MercedesInsurance",LocalDate.of(2023, 07, 24),LocalDate.of(2023, 07, 22),LocalDate.of(2023, 07, 24),"inactive", 35000, 100000, 125000, 9, "daily", "pending");
+		Policy object5=new Policy(5, 105,"Astron-Martin-Insurance", LocalDate.of(2023,07, 5),LocalDate.of(2023,07, 5),LocalDate.of(2023,07, 5),"active",2500,10000,12500,9,"monthly","paid");
+		
+		map.put(object1.getPolicy_id(), object1);
+		map.put(object2.getPolicy_id(), object2);
+		map.put(object3.getPolicy_id(), object3);
+		map.put(object4.getPolicy_id(), object4);
+		map.put(object5.getPolicy_id(),object5);
+	
+		System.out.println("enter key to get policy details ");
+		int Policyid=sc.nextInt();
+		if(map.containsKey(Policyid))
+		{
+			
+		
+		
+		Policy obj = Policy.getPolicyinfo(map, Policyid);
+		
+		System.out.println(obj.toString());
+		
+		System.out.println("Policy  status  is ");
+		String Policystatus=Policy.getPolicyStatus(map, Policyid);
+		System.out.println(Policystatus);
+		 
+		
+		System.out.println("policy payment status is ");
+		String paymentstatus=Policy.getPaymentStatus(map, Policyid);
+		System.out.println("status of payment is "+paymentstatus);
+		
+		 System.out.println("payment due date is as follows  ");
+		 LocalDate paymentduedate=Policy.getPaymentduedate(map, Policyid);
+		 System.out.println("days left are  "+ChronoUnit.DAYS.between(LocalDate.now(),paymentduedate)+"  as on  "+LocalDate.now());
+		 
+		 System.out.println("period remaining is ");
+		 Period periodObj = Period.between(LocalDate.now(), paymentduedate);
+		 int days = periodObj.getDays();
+		 int month=periodObj.getMonths();
+		 int year=periodObj.getYears();
+		 System.out.println(year+ "years"+ month+ "months" +days+ "days" );
+		   
+		}
+		else
+		{
+		 System.out.println("Entry not found!! enter new details");
+		
+		  
+		 Policy newpolicy=new Policy(sc.nextInt(),sc.nextLong(),sc.next(),LocalDate.parse(sc.next()),LocalDate.parse(sc.next()),LocalDate.parse(sc.next()),sc.next(),sc.nextDouble(),sc.nextDouble(),sc.nextDouble(),sc.nextInt(),sc.next(),sc.next());
+		 if(map.containsKey(newpolicy.getPolicy_id()))
+		 {
+			 System.out.println("id exists and duplicated ");
+		 }
+		 else
+		 {
+		 
+		 map.put(newpolicy.getPolicy_id(), newpolicy);
+		 System.out.println("newly entered entry is ");
+		 System.out.println(newpolicy.toString());
+		 
+		 }
+		
+	}	}
+	 
+	      
+	       
+      
+	
+	
+}
+
+----> Write a class where all the components will be used like- SIB, IIB, Constructors, data members, methods etc.
+
+class Student
+{
+    int rollno;
+    String name;
+    static String CollegeName="Oxford";
+    static
+    {
+        System.out.println("static block executed");
+    }
+    {
+        System.out.println("IIB executed ");
+    }
+    
+    Student(int rollno,String name)
+    {
+        this.rollno=rollno;
+        this.name=name;
+        System.out.println("constructor executed");
+    }
+    
+    void display()
+    {
+        System.out.println("rollno is  "+rollno+"name of student is  "+name+"college is  "+CollegeName);
+    }
+}
+
+public class Main{
+    public static void main(String args[])
+    {
+        Student object1=new Student(1,"name1");
+        Student object2=new Student(2,"name2");
+        Student ss=new Student(3,"name3");
+        object1.display();
+        object2.display();
+    }
+} 
+
+
+output--->  
+static block executed
+IIB executed 
+constructor executed
+IIB executed 
+constructor executed
+IIB executed 
+constructor executed
+rollno is  1name of student is  name1college is  Oxford
+rollno is  2name of student is  name2college is  Oxford
+------------------------------------------------------------------------
+
+What is Liferay?
+Liferay is an open source enterprise portal and Java-based web application platform provides a toolset for the development of customizable portals and websites.
+
+
+Why we use Liferay?
+Liferay is a modern and secure solution that offers personalization, analytics, and content management all in one place.
+Easy to use & learn
+Feature-rich
+Large community of users
+Free (Community Edition)
+Support for standard technologies
+Extremely flexible in deployment options
+Mainly, Liferay presents itself as “One Platform. Endless Solutions.” It helps with various kinds of development challenges and is mostly used in B2B and B2E environments. With Liferay, you can create a portal solution tailored exactly for your business.
+
+
+
+What is the use of portal-ext.properties?
+We cannot directly modify the portal.properties file; instead,we create a separate file to override properties  to change. The portal-ext.properties file has been defined for this purpose.
+
+
+
+What is the use of data folder in Liferay home?
+Use to store data so that the path can be stored and linked in the database.
+Stores an embedded HSQL database, DXP’s file repository, and search indexes. The embedded HSQL database is configured by default, but it’s intended for demonstration and trial purposes only. 
+
+
+
+What is the use of deploy folder in Liferay home?
+By default, this folder auto-deploys plugins. Auto-deploy supports application .lpkg files from Liferay Marketplace, plugin .war files, and plugin .jar files.
+You can configure an alternative path for the deploy folder by setting the portal property auto.deploy.deploy.dir.
+
+
+
+What is the default data base of Liferay?
+Liferay comes with a default database called “HSQL” or “Hypersonic”
+
+

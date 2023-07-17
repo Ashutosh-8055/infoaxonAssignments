@@ -1,0 +1,75 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.*;
+import java.util.Scanner;
+
+
+public class Tester
+{
+   public static void main(String args[])
+     {
+           Scanner sc=new Scanner(System.in);
+           
+          Map<Integer,Policy> map = new HashMap<>();
+          
+          Policy object1=new Policy(1, 101, "CarInsurance", LocalDate.of(2023, 07, 24), LocalDate.of(2023, 07, 24), LocalDate.of(2023, 07, 24), "active", 25000, 100000, 125000, 8, "monthly", "paid");
+		Policy object2=new Policy(2, 102, "BikeInsurance", LocalDate.of(2023, 07, 24), LocalDate.of(2023, 7, 24), LocalDate.of(2023, 07, 24), "active", 25000, 100000, 125000, 8, "yearly", "pending");
+		Policy object3=new Policy(3, 103, "BusInsurance",  LocalDate.of(2023, 07, 24), LocalDate.of(2023, 07, 30), LocalDate.of(2023, 07, 24), "dormant", 25000, 100000, 125000, 8, "weekly", "pending");
+		Policy object4=new Policy(4, 104,"MercedesInsurance",LocalDate.of(2023, 07, 24),LocalDate.of(2023, 07, 22),LocalDate.of(2023, 07, 24),"inactive", 35000, 100000, 125000, 9, "daily", "pending");
+		Policy object5=new Policy(5, 105, "Astron-Martin-Insurance",LocalDate.of(2023,07, 5),LocalDate.of(2023,07, 5),LocalDate.of(2023,07, 5),"active",2500,10000,12500,9,"monthly","paid");
+
+
+         map.put(object1.getPolicy_id,object1);
+         map.put(object2.getPolicy_id,object1);
+         map.put(object3.getPolicy_id,object1);
+         map.put(object4.getPolicy_id,object1);
+         map.put(object5.getPolicy_id,object1);
+
+        System.out.println("enter key to get policy details ");
+        int Policyid=sc.nextInt();
+
+        if(map.containsKey(Policyid))
+        {
+            Policy policy=Policy.getinfo(map,Policyid);
+            System.out.println(policy.toString());
+
+            System.out.println("policy status is ");
+            Policy object2=Policy.getPolicyStatus(map,Policyid);
+            System.out.println(object2); 
+
+             System.out.println("Policy payment status is ");
+             Policy str=Policy.getPolicyPaymentStatus(map,Policyid);
+             System.out.println("payment status is "+str);
+
+
+            System.out.println("Payment due date is ");
+            LocalDate paymentduedate=Policy.getPolicyDueDate(map,Policyid);
+            System.out.println("day left are "+ChronoUnit.DAYS.between(LocalDate.now(),paymentduedate)+" as on "+LocalDate.now());
+
+           System.out.println("period remaining is ");
+           Period periodobject=Period.between(LocalDate.now(),paymentduedate);
+           int day=periodobject.getDays();
+           int month=periodobject.getMonths();
+           int year=periodobject.getYears();
+           System.out.println(year+ "years"+ month+ "months" +days+ "days" );
+        }
+     else
+        {
+            System.out.println("entry not found !! enter new details ");
+            Policy newpolicy=new Policy(sc.nextInt(),sc.nextLong(),sc.next(),LocalDate.parse(sc.next()),LocalDate.parse(sc.next()),LocalDate.parse(sc.next()),sc.next(),sc.nextDouble(),sc.nextDouble(),sc.nextDouble(),sc.nextInt(),sc.next(),sc.next());
+		 
+             if(map.containsKey(newpolicy.getPolicy_id()))
+                 {
+                    System.out.println("entry exits and id is duplicated ");
+                 }
+              else
+                 {
+                        map.put(newpolicy.getPolicy_id(),newpolicy);
+                        System.out.println(newpolicy);
+                 }
+        }
+		 
+      }  
+}

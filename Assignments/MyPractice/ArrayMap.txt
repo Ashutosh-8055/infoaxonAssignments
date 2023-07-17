@@ -1,0 +1,31 @@
+import java.util.Map;
+import java.util.HashMap;
+
+class ArrayMap
+{
+      public static void main(String args[])
+       {
+                  int[] arrr=new int[]{55,7,2,4,9,3,7,7};
+                  int[] arr=new int[]{5,3,7,2,1,7,7,7,3};
+
+                  Map<Integer,Integer> map = new HashMap<>();
+                  for(int c : arrr)
+                     {
+                         map.put(c,1);
+                     }
+
+                  for(int k : arr)
+                    {
+                          if(map.containsKey(k))
+                            {
+                                map.put(k,map.get(k)+1);
+                            }
+                    }
+
+                  for(Map.Entry<Integer,Integer> entry : map.entrySet())
+                    {
+                             if(entry.getValue()==2)
+                                   System.out.println(entry.getKey()+" "+entry.getValue());
+                    }
+       }
+}

@@ -1,0 +1,148 @@
+1)Write the steps to do the setup of liferay with LDS.
+=> 
+*Download a Liferay Dev Studio DXP bundle.
+*Unzip the downloaded package to a location on your system.
+*Download and install the Java Development Kit (JDK). Liferay DXP runs on Java. The JDK is required because you’ll be developing Liferay DXP apps in Liferay Dev Studio DXP. The JDK is an enhanced version of the Java Environment used for developing new Java technology. Use JDK 8 or higher.
+*Download and install Liferay Dev Studio DXP Installing it is easy: unzip it to a convenient location on your system.
+*To run Liferay Dev Studio DXP, run the LiferayDeveloperStudio executable.
+*When prompted, indicate your workspace’s path. Name your new workspace "workspace" and click OK.
+*Download Liferay Bundle: Visit the Liferay website and download the desired version of the Liferay bundle. Select the bundle that matches your project requirements, such as Liferay Portal, Liferay DXP.
+*Extract Liferay Bundle: Once the Liferay bundle is downloaded, extract its contents to a specific location on your computer. This location will serve as the root directory for your Liferay installation.
+*Start Liferay Server: Open the Liferay Developer Studio and click on the "Servers" tab at the bottom. Right-click inside the "Servers" tab and select "New" > "Server". Choose "Liferay v7.x" from the list and click "Next".
+*Configure Liferay Server: In the server configuration window, provide a name for the server and specify the Liferay bundle directory by clicking on the "Browse" button. Navigate to the location where you extracted the Liferay bundle and select the appropriate directory. Click "Finish" to save the server configuration.
+*Start Liferay Server: After configuring the server, you can start it by right-clicking on the server in the "Servers" tab and selecting "Start". Liferay Developer Studio will start the server and deploy the necessary artifacts.
+*Access Liferay Portal: Once the server is started, you can access Liferay Portal by opening a web browser and entering the following URL: http://localhost:8080. This will open the Liferay Portal home page, where you can create user accounts, manage sites, and develop applications.
+
+ 
+
+-------------------------------------------------------------------------------
+
+ 
+
+2)Write the steps to change the portal properties to remove the Term of Use, Reminder Question section and enable the live users monitoring on the portal.
+=>
+*Look for a portal-ext.properties file at liferay home . 
+*Then search for Liferay Portal 7.4.0 Properties on web .
+*Search for the properties that map the Term of Use, Reminder Question section and enable the live users monitoring on the portal. 
+*Then in the portal-ext.properties change their value to false as shown below:-
+
+ 
+
+terms.of.use.required=false
+users.reminder.queries.enabled=false
+users.reminder.queries.custom.question.enabled=false
+live.users.enabled=true    
+
+ 
+
+
+-------------------------------------------------------------------------------
+
+ 
+
+
+3)Write the steps to create a role like Portal Manager with assigned permission below.
+Access of User and Organization to view edit and delete.
+Access of Site Creation.
+Access of Web Content Management
+Access of Document Media Management
+=> *Log in to your Liferay Portal as an administrator and navigate to the administration interface.
+* In the administration interface, locate the Control Panel. 
+*Within the Control Panel, find the "Roles" section. Click on it to access the roles and permissions management.
+* In the Roles section, look for an option to create a new role. Click on it to start the role creation process.
+Provide Role Information: In the role creation window, enter the name for the new role, such as "Portal Manager." You can also provide a description or any other relevant details.
+*Assign Permissions: After providing role information, you will find option  "Define permissions". Look for a section related to permissions or access control.
+*Go-to Users and Organizations drop down and Assign respective permissions of view edit and delete .
+*Go-to Site dropdown for Site Creation Permissions .
+*Go-to Content & Data for Web Content Management Permissions and Document Media Management permissions .
+
+
+
+----------------------------------------------------------------------------------
+
+
+
+To create an organization with a site and configure the login, landing, and home pages for that organization site in Liferay, follow these steps:
+
+Access the Liferay portal:
+
+Open your web browser and navigate to the Liferay portal's URL.
+Log in using administrator or user credentials with sufficient permissions to create organizations and sites.
+Create the organization:
+
+Click on the Control Panel (top-right corner) to access the administrative options.
+In the Control Panel, go to "Users" > "Organizations".
+Click on the "Add" button to create a new organization.
+Fill in the necessary details for the organization, such as the name and description.
+Click "Save" to create the organization.
+Create the site:
+
+While still in the Control Panel, go to "Site Builder" > "Sites".
+Click on the "Add" button to create a new site.
+Select the "Organization Site" option.
+Choose the organization you created in the previous step from the dropdown menu.
+Provide a name, description, and any other desired settings for the site.
+Click "Save" to create the site.
+Configure the login page:
+
+In the Control Panel, go to "Site Builder" > "Pages" and find the login page of the organization site.
+Click on the login page to edit it.
+Customize the login page as per your requirements, such as adding a logo, changing the layout, or adding portlets.
+Save the changes.
+Configure the landing page:
+
+Determine the page that you want to set as the landing page for the organization site.
+In the Control Panel, go to "Site Builder" > "Pages" and find the desired landing page.
+Click on the landing page to edit it.
+Customize the landing page by adding content, portlets, or modifying the layout.
+Save the changes.
+Configure the home page:
+
+In the Control Panel, go to "Site Builder" > "Navigation Menus".
+Find the navigation menu for the organization site and click on it to edit.
+Locate the "Home" link and click on it to edit the home page configuration.
+Select the desired page (e.g., the landing page) as the home page.
+Save the changes.
+Test the organization site:
+
+Access the Liferay portal and log in as a user assigned to the organization.
+Navigate to the organization site and verify that the login, landing, and home pages are configured correctly.
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Write the steps to create a site template and create a site by using Liferay default site template.
+
+Access the Liferay portal:
+
+Open your web browser and navigate to the Liferay portal's URL.
+Log in using administrator or user credentials with sufficient permissions to create site templates and sites.
+Create a site template:
+
+Click on the Control Panel (top-right corner) to access the administrative options.
+In the Control Panel, go to "Site Builder" > "Site Templates".
+Click on the "Add" button to create a new site template.
+Provide a name and description for the site template.
+Choose the desired template type (e.g., Blank, Blog, Community).
+Customize the template by adding pages, content, and configuring layouts as needed.
+Click "Save" to create the site template.
+Create a new site using the default site template:
+
+In the Control Panel, go to "Site Builder" > "Sites".
+Click on the "Add" button to create a new site.
+Choose the "Community Site" option or the appropriate option based on your Liferay version.
+Fill in the required details for the new site, such as the site name and description.
+In the "Templates" section, select "Use Site Template" and choose the default site template provided by Liferay.
+Optionally, configure other settings for the site, such as membership, appearance, and content.
+Click "Save" to create the site using the default site template.
+Test the new site:
+
+Access the Liferay portal and log in as a user assigned to the new site.
+Navigate to the newly created site and verify that it is using the default site template with the preconfigured pages, content, and layout.
+
+
+--------------------------------------------
+
+
+ 

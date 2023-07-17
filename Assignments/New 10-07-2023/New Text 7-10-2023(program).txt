@@ -1,0 +1,373 @@
+import java.time.LocalDate;
+
+/**
+ * Lead class with data members 
+ * getters and setters method 
+ * constructor
+ * static block and instance block
+ * @author Ashutosh Shravan Hanumante
+ *
+ */
+
+public  class Lead{
+	
+	         // declaring instance variables for the Lead class to get the  necessary information about the Lead
+	    
+            private String firstName;
+	    private String middleName;
+	    private String lastName;
+	    private LocalDate dateOfBirth;
+	    private int age;
+	    private String mobileNumber;
+	    private String emailAddress;
+	    private String jobDesignation;
+	    private String isMarried;
+	    private String isPhysicallyChallenged;
+	    private String  spouseName;
+	    private int numberOfChildrens;
+	    private int numberOfFamilyMembers;
+	    private boolean isInterestedToTakePolicy;
+	    private String location;
+	    private float annualIncome;
+	    private String policyName;
+	    private String leadAgentName;
+	    private int leadAgentId;
+	    private String leadAgentNumber;
+	    private static String nameOfOrganization;
+	    private  int leadid=0;
+	    private static int leadIdGenerator;
+	    
+	    
+	  //static block
+	    static    
+	    {
+	    	nameOfOrganization="NEW INDIA";  // initializing static field
+	    	leadIdGenerator=1;
+	    	System.out.println("static block executed only at the time of class loading ");
+	    	
+	    }
+	    
+	   
+	  
+	    //instance block
+	    {
+	    	
+	    	System.out.println("instance block executed every time the object is created ");
+	    }
+	   
+	    
+	  //constructor
+    
+	        public Lead(String firstName, String middleName, String lastName, LocalDate dateOfBirth, int age,
+			String mobileNumber, String emailAddress, String jobDesignation, String isMarried,
+			String isPhysicallyChallenged, String spouseName, int numberOfChildrens, int numberOfFamilyMembers,
+			boolean isInterestedToTakePolicy, String location, float annualIncome, String policyName,
+			String leadAgentName, int leadAgentId, String leadAgentNumber) {
+		super();
+		this.firstName = firstName;
+		this.middleName = middleName;
+		this.lastName = lastName;
+		this.dateOfBirth = dateOfBirth;
+		this.age = age;
+		this.mobileNumber = mobileNumber;
+		this.emailAddress = emailAddress;
+		this.jobDesignation = jobDesignation;
+		this.isMarried = isMarried;
+		this.isPhysicallyChallenged = isPhysicallyChallenged;
+		this.spouseName = spouseName;
+		this.numberOfChildrens = numberOfChildrens;
+		this.numberOfFamilyMembers = numberOfFamilyMembers;
+		this.isInterestedToTakePolicy = isInterestedToTakePolicy;
+		this.location = location;
+		this.annualIncome = annualIncome;
+		this.policyName = policyName;
+		this.leadAgentName = leadAgentName;
+		this.leadAgentId = leadAgentId;
+		this.leadAgentNumber = leadAgentNumber;
+		this.leadid = leadIdGenerator;
+		leadIdGenerator++;
+	}
+
+            // generating toString() to print the values for the variables.
+
+		@Override
+		public String toString() {
+			return "Lead [firstName=" + firstName + ", middleName=" + middleName + ", lastName=" + lastName
+					+ ", dateOfBirth=" + dateOfBirth + ", age=" + age + ", mobileNumber=" + mobileNumber
+					+ ", emailAddress=" + emailAddress + ", jobDesignation=" + jobDesignation + ", isMarried="
+					+ isMarried + ", isPhysicallyChallenged=" + isPhysicallyChallenged + ", spouseName=" + spouseName
+					+ ", numberOfChildrens=" + numberOfChildrens + ", numberOfFamilyMembers=" + numberOfFamilyMembers
+					+ ", isInterestedToTakePolicy=" + isInterestedToTakePolicy + ", location=" + location
+					+ ", annualIncome=" + annualIncome + ", policyName=" + policyName + ", leadAgentName="
+					+ leadAgentName + ", leadAgentId=" + leadAgentId + ", leadAgentNumber=" + leadAgentNumber
+					+ ", leadid=" + leadid + "]";
+		}
+
+		
+                   /*
+		    * Generating getters and setters for the fields 
+		    */
+		
+
+		public String getFirstName() {
+			return firstName;
+		}
+		
+
+		public void setFirstName(String firstName) {
+			this.firstName = firstName;
+		}
+
+
+
+		public String getMiddleName() {
+			return middleName;
+		}
+
+
+
+		public void setMiddleName(String middleName) {
+			this.middleName = middleName;
+		}
+
+
+
+		public String getLastName() {
+			return lastName;
+		}
+
+
+
+		public void setLastName(String lastName) {
+			this.lastName = lastName;
+		}
+
+
+
+		public LocalDate getDateOfBirth() {
+			return dateOfBirth;
+		}
+
+
+
+		public void setDateOfBirth(LocalDate dateOfBirth) {
+			this.dateOfBirth = dateOfBirth;
+		}
+
+
+
+		public int getAge() {
+			return age;
+		}
+
+
+
+		public void setAge(int age) {
+			this.age = age;
+		}
+
+
+
+		public String getMobileNumber() {
+			return mobileNumber;
+		}
+
+
+
+		public void setMobileNumber(String mobileNumber) {
+			this.mobileNumber = mobileNumber;
+		}
+
+
+
+		public String getEmailAddress() {
+			return emailAddress;
+		}
+
+
+
+		public void setEmailAddress(String emailAddress) {
+			this.emailAddress = emailAddress;
+		}
+
+
+
+		public String getJobDesignation() {
+			return jobDesignation;
+		}
+
+
+
+		public void setJobDesignation(String jobDesignation) {
+			this.jobDesignation = jobDesignation;
+		}
+
+
+
+		public String getIsMarried() {
+			return isMarried;
+		}
+
+
+
+		public void setIsMarried(String isMarried) {
+			this.isMarried = isMarried;
+		}
+
+
+
+		public String getIsPhysicallyChallenged() {
+			return isPhysicallyChallenged;
+		}
+
+
+
+		public void setIsPhysicallyChallenged(String isPhysicallyChallenged) {
+			this.isPhysicallyChallenged = isPhysicallyChallenged;
+		}
+
+
+
+		public String getSpouseName() {
+			return spouseName;
+		}
+
+
+
+		public void setSpouseName(String spouseName) {
+			this.spouseName = spouseName;
+		}
+
+
+
+		public int getNumberOfChildrens() {
+			return numberOfChildrens;
+		}
+
+
+
+		public void setNumberOfChildrens(int numberOfChildrens) {
+			this.numberOfChildrens = numberOfChildrens;
+		}
+
+
+
+		public int getNumberOfFamilyMembers() {
+			return numberOfFamilyMembers;
+		}
+
+
+
+		public void setNumberOfFamilyMembers(int numberOfFamilyMembers) {
+			this.numberOfFamilyMembers = numberOfFamilyMembers;
+		}
+
+
+
+		public boolean isInterestedToTakePolicy() {
+			return isInterestedToTakePolicy;
+		}
+
+
+
+		public void setInterestedToTakePolicy(boolean isInterestedToTakePolicy) {
+			this.isInterestedToTakePolicy = isInterestedToTakePolicy;
+		}
+
+
+
+		public String getLocation() {
+			return location;
+		}
+
+
+
+		public void setLocation(String location) {
+			this.location = location;
+		}
+
+
+
+		public float getAnnualIncome() {
+			return annualIncome;
+		}
+
+
+
+		public void setAnnualIncome(float annualIncome) {
+			this.annualIncome = annualIncome;
+		}
+
+
+
+		public String getPolicyName() {
+			return policyName;
+		}
+
+
+
+		public void setPolicyName(String policyName) {
+			this.policyName = policyName;
+		}
+
+
+
+		public String getLeadAgentName() {
+			return leadAgentName;
+		}
+
+
+
+		public void setLeadAgentName(String leadAgentName) {
+			this.leadAgentName = leadAgentName;
+		}
+
+
+
+		public int getLeadAgentId() {
+			return leadAgentId;
+		}
+
+
+
+		public void setLeadAgentId(int leadAgentId) {
+			this.leadAgentId = leadAgentId;
+		}
+
+
+
+		public String getLeadAgentNumber() {
+			return leadAgentNumber;
+		}
+
+
+
+		public void setLeadAgentNumber(String leadAgentNumber) {
+			this.leadAgentNumber = leadAgentNumber;
+		}
+
+
+
+		public static String getNameOfOrganization() {
+			return nameOfOrganization;
+		}
+
+
+
+		public static void setNameOfOrganization(String nameOfOrganization) {
+			Lead.nameOfOrganization = nameOfOrganization;
+		}
+
+
+
+		public int getLeadid() {
+			return leadid;
+		}
+
+
+
+		public void setLeadid(int leadid) {
+			this.leadid = leadid;
+		}
+
+}
