@@ -1,0 +1,82 @@
+-----------------------------------------------------------------------------------------------------------------
+Write a method to swap two numbers without using third variables.
+
+static ArrayList Swaptwonumbers(long number1,long number2)
+{
+    ArrayList<Integer> list=new ArrayList<>();
+     number1=number1+number2;
+     number2=number1-number2;
+     number1=number1-number2;
+     list.add(number1);
+     list.add(number2)
+
+      return list;  
+    
+}
+-----------------------------------------------------------------------------------------------------------------
+Write a method to calculate simple interest as per the amount, tenure and interest rate.
+
+long CalculateSimpleInterest(int amount,int tenure)
+{
+         long SimpleInterest=0;
+         int rate=8;
+         SimpleInterest=(amount*tenure*rate)/100;
+
+         return SimpleInterest;
+
+}
+--------------------------------------------------------------------------------------------------------------------
+Write a method to convert Fahrenheit To Celsius.
+
+long ConvertFahrenheittoCelsius(int Fahrenheit)
+{
+          long Celsius=0;
+          Celsius=(Fahrenheit-32)*(5/9);
+
+          return Celsius;
+}
+
+------------------------------------------------------------------------------------------------------------------------
+Write a method to generate an employee code of eight digits where frist two digits represent month of joining and next two digits represent year 
+of the joining and other 4 digits will be created from the addition of data of birth.
+
+ex:- joining month 03
+
+      Joining year 2023
+
+      Date of birth  04-06-1998 (1998+06+04=2008)
+
+      Employee Id :- 03232008
+
+
+StringBuilder GenerateEmployeeCode(String monthofjoining, String yearofjoining, String DateofBirth)
+{
+       
+       
+       
+       
+       StringBuilder stringbuilderobject = new StringBuilder("");
+       
+       stringbuilderobject=stringbuilderobject.append(monthofjoining);
+       
+       stringbuilderobject=stringbuilderobject.append(yearofjoining.substring(2,4));
+             
+       int day=Integer.parseInt(DateofBirth.substring(0,2));
+             
+       int month=Integer.parseInt(DateofBirth.substring(3,5));
+             
+       int year=Integer.parseInt(DateOfBirth.substring(6,10));
+             
+       long sumofdateofbirth=0;
+             
+       sumofdateofbirth=day+month+year;
+             
+       stringbuilderobject=stringbuilderobject.append(sumofdateofbirth);
+
+                            return  stringbuilderobject;
+ 
+}
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
