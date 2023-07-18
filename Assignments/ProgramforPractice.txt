@@ -1701,3 +1701,8 @@ class Main {
     input.close();
   }
 }
+
+output:>
+Enter first String: Race
+Enter second String: Care
+Race and Care are anagram.
