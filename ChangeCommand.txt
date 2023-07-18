@@ -1,0 +1,35 @@
+Ashutosh Shravan Han@DESKTOP-4URASJ3 MINGW64 ~/Desktop/NewGit/InfoAxonAssignments/Assignments (main)
+$ git add .
+
+Ashutosh Shravan Han@DESKTOP-4URASJ3 MINGW64 ~/Desktop/NewGit/InfoAxonAssignments/Assignments (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   ProgramforPractice.txt
+
+Ashutosh Shravan Han@DESKTOP-4URASJ3 MINGW64 ~/Desktop/NewGit/InfoAxonAssignments/Assignments (main)
+$ git commit -m "new anagram program added"
+[main 887ef7b] new anagram program added
+ 1 file changed, 46 insertions(+)
+
+Ashutosh Shravan Han@DESKTOP-4URASJ3 MINGW64 ~/Desktop/NewGit/InfoAxonAssignments/Assignments (main)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 794 bytes | 794.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Ashutosh-8055/infoaxonAssignments.git
+   3bbfceb..887ef7b  main -> main
+
+Ashutosh Shravan Han@DESKTOP-4URASJ3 MINGW64 ~/Desktop/NewGit/InfoAxonAssignments/Assignments (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
