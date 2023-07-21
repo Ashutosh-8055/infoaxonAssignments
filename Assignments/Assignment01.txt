@@ -4,15 +4,15 @@ write a method to print a table
 write a method to check a number is armstrong is not 
 write a method to create a map for different line of business
 -----------------Program 1
-long sumofSalary=addition(number1,number2);
+long sumofSalary=addition(number1,number2);  // call to method and getting value
 
-  public long addition(int number1,int number2)
+  public long addition(int number1,int number2) // method declaration and definition
 {
       return number1+number2;
 }
 -----------------Program 2
     
-       void day(int date)
+       void day(int date)  // method declaration and definition 
           {
                String[] weekDays={"Sat","Sun","Mon","Tue","Wed","Thurs","Fri"};
                  if(date>0)
@@ -23,7 +23,7 @@ long sumofSalary=addition(number1,number2);
                          System.out.print("input cannot be 0");
           }         
 ----------------Program 3
-void table(int number)
+void table(int number)       // method declaration and definition
 {
      for(int index=1;index<=10;index++)
       {
@@ -33,7 +33,7 @@ void table(int number)
 
 
 --------------Program 4
-long armstrong(long number)
+long armstrong(long number)   // method declaration and definition to get value
 
 {
       long sum=0;
@@ -53,21 +53,21 @@ public class Main {
                        callToPrintMap();
 	 }
    
-     public static Map callToGetMap()
+     public static Map callToGetMap()      // method declaration and definition to get a map
             {     
-                  Map<Integer,String> listOfBusiness=new HashMap<>();
+                  Map<Integer,String> listOfBusiness=new HashMap<>();   // map object creation
                                   
-                 listOfBusiness.put(1,"Bike-Insurance");
+                 listOfBusiness.put(1,"Bike-Insurance");       // adding values to map
                  listOfBusiness.put(2,"Car-Insurance");
                  listOfBusiness.put(3,"health-Insurance");
                  listOfBusiness.put(4,"Mobile-Insurance");
-                 listOfBusiness.put(5,"Insurance-AllType");
+                 listOfBusiness.put(5,"Insurance-AllType");     
               
                    return listOfBusiness;
 		
               }    
 
-       public static  void callToPrintMap()
+       public static  void callToPrintMap()    // method declaration and definition to print map  key-values 
               {
                        Map<Integer,String> getbusinesslist = null ;
                    

@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------------------------------------------------
 Write a method to swap two numbers without using third variables.
 
-static ArrayList swapTwoNumbers(long number1,long number2)
+static ArrayList swapTwoNumbers(long number1,long number2)   // // method declaration and definition to get a list
 {
     ArrayList<Integer> list=new ArrayList<>();
      number1=number1+number2;
@@ -16,7 +16,7 @@ static ArrayList swapTwoNumbers(long number1,long number2)
 -----------------------------------------------------------------------------------------------------------------
 Write a method to calculate simple interest as per the amount, tenure and interest rate.
 
-long calculateSimpleInterest(int amount,int tenure)
+long calculateSimpleInterest(int amount,int tenure)     // method declaration and definition to get simpleInterest
 {
          long simpleInterest=0;
          int rate=8;
@@ -28,7 +28,7 @@ long calculateSimpleInterest(int amount,int tenure)
 --------------------------------------------------------------------------------------------------------------------
 Write a method to convert Fahrenheit To Celsius.
 
-long convertFahrenheittoCelsius(int Fahrenheit)
+long convertFahrenheittoCelsius(int Fahrenheit)  // method declaration and definition to get celcius value
 {
           long celsius=0;
           celsius=(Fahrenheit-32)*(5/9);
@@ -49,7 +49,7 @@ ex:- joining month 03
       Employee Id :- 03232008
 
 
-StringBuilder generateEmployeeCode(String monthOfJoining, String yearOfJoining, String DateofBirth)
+StringBuilder generateEmployeeCode(String monthOfJoining, String yearOfJoining, String DateofBirth)     // method declaration and definition to get stringBuilderObject
 {
        
        
