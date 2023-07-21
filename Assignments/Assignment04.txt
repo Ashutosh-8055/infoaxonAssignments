@@ -192,7 +192,7 @@ Navigate to the newly created site and verify that it is using the default site 
 Write a class for Lead where you need to use below things with the data members you need to think to create the lead data members.
 static block, instance block, all literals, all datatypes, constructor, naming convention CAMEL coding, methods, all type of comments, all type of variables etc.
 
-
+//creating Lead class with data members and member functions
 
 public class Lead {
     // Data members
@@ -290,7 +290,7 @@ public class Lead {
     }
 }
 
-public class PolicyForSpouse  extends Lead
+public class PolicyForSpouse  extends Lead  //  creating child class PolicyForSpouse of class Lead by using inheritence
   {
             private String firstName;
             private String middleName;
