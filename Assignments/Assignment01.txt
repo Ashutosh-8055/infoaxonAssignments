@@ -47,10 +47,10 @@ long armstrong(long number)   // method declaration and definition to get value
 }
 
 ---------------Program 5
-public class Main {
+public class Main {   // class with main method
     public static void main(String[] args) 
         {
-                       callToPrintMap();
+                       callToPrintMap();   // call to method
 	 }
    
      public static Map callToGetMap()      // method declaration and definition to get a map
