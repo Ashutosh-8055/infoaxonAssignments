@@ -1,21 +1,24 @@
 -----------------------------------------------------------------------------------------------------------------
 Write a method to swap two numbers without using third variables.
 
-void Swaptwonumbers(BigInteger number1,BigInteger number2)
+static ArrayList Swaptwonumbers(long number1,long number2)
 {
-    
+    ArrayList<Integer> list=new ArrayList<>();
      number1=number1+number2;
      number2=number1-number2;
      number1=number1-number2;
-     System.out.println(number1+" "+number2);   
+     list.add(number1);
+     list.add(number2)
+
+      return list;  
     
 }
 -----------------------------------------------------------------------------------------------------------------
 Write a method to calculate simple interest as per the amount, tenure and interest rate.
 
-BigInteger CalculateSimpleInterest(int amount,int tenure)
+long CalculateSimpleInterest(int amount,int tenure)
 {
-         BigInteger SimpleInterest=0;
+         long SimpleInterest=0;
          int rate=8;
          SimpleInterest=(amount*tenure*rate)/100;
 
@@ -25,9 +28,9 @@ BigInteger CalculateSimpleInterest(int amount,int tenure)
 --------------------------------------------------------------------------------------------------------------------
 Write a method to convert Fahrenheit To Celsius.
 
-BigInteger ConvertFahrenheittoCelsius(int Fahrenheit)
+long ConvertFahrenheittoCelsius(int Fahrenheit)
 {
-          BigInteger Celsius=0;
+          long Celsius=0;
           Celsius=(Fahrenheit-32)*(5/9);
 
           return Celsius;
@@ -46,17 +49,17 @@ ex:- joining month 03
       Employee Id :- 03232008
 
 
-StringBuilder GenerateEmployeeCode(int monthofjoining, int yearofjoining, String DateofBirth)
+StringBuilder GenerateEmployeeCode(String monthofjoining, String yearofjoining, String DateofBirth)
 {
        
        
-       String YearofJoin=String.valueOf(yearofjoining);
+       
        
        StringBuilder stringbuilderobject = new StringBuilder("");
        
        stringbuilderobject=stringbuilderobject.append(monthofjoining);
        
-       stringbuilderobject=stringbuilderobject.append(YearofJoin.substring(2,4));
+       stringbuilderobject=stringbuilderobject.append(yearofjoining.substring(2,4));
              
        int day=Integer.parseInt(DateofBirth.substring(0,2));
              
@@ -64,7 +67,7 @@ StringBuilder GenerateEmployeeCode(int monthofjoining, int yearofjoining, String
              
        int year=Integer.parseInt(DateOfBirth.substring(6,10));
              
-       int sum=0;
+       long sumofdateofbirth=0;
              
        sumofdateofbirth=day+month+year;
              
@@ -73,4 +76,7 @@ StringBuilder GenerateEmployeeCode(int monthofjoining, int yearofjoining, String
                             return  stringbuilderobject;
  
 }
+
+
+
 --------------------------------------------------------------------------------------------------------------------------------

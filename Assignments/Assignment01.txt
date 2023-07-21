@@ -4,9 +4,9 @@ write a method to print a table
 write a method to check a number is armstrong is not 
 write a method to create a map for different line of business
 -----------------Program 1
-BigInteger SumofSalary=addition(number1,number2);
+long SumofSalary=addition(number1,number2);
 
-  public BigInteger addition(int number1,int number2)
+  public long addition(int number1,int number2)
 {
       return number1+number2;
 }
@@ -33,13 +33,13 @@ void table(int number)
 
 
 --------------Program 4
-BigInteger armstrong(BigInteger number)
+long armstrong(long number)
 
 {
-      BigInteger sum=0;
+      long sum=0;
       while(number>0)
    {
-         BigInteger remainder=number%10;
+         long remainder=number%10;
          sum=sum+(remainder*remainder*remainder);
          number=number/10;
      }

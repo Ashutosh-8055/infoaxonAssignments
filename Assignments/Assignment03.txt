@@ -1,26 +1,41 @@
 Assignment for 03-07-2023-------------------->
 
+Create a class to sell the policy with the below parameters. Also write the one parameterise constructor to assign the values in the below fields. 
+
+Write method to get the policy details as per policy id passed.
+
+Write a method to check the status of the policy is active/expired as per policy id passed.
+
+Write a method to check the payment status of the policy per policy id passed.
+
+Write setters and getters for the below fields.
+
+Write a method to check the policy payment when will be due.
+ 
+
+ //Pojo class 
+
 import java.time.LocalDate;
-
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class Policy {
 	
-	 int Policy_id;
-     long Policy_number;
-     String nameofPolicy;
-     LocalDate Policy_Created_date;
-     LocalDate Policy_Due_Date;
-     LocalDate Policy_Payment_Date;
-     String Policy_Status;
-     double Policy_Premium_Amount;
-     double Policy_Maturity_Amount;
-     double Policy_Sum_Assured;
-     int Policy_Tenure;
-     String Policy_Payment_Frequency;
-     String Policy_Payment_Status;
+	//  declaration of local memebers
+	
+	 int policyId;
+     long policyNumber;
+     String nameOfPolicy;
+     LocalDate policyCreatedDate;
+     LocalDate policyDueDate;
+     LocalDate policyPaymentDate;
+     String policyStatus;
+     double policyPremiumAmount;
+     double policyMaturityAmount;
+     double policySumAssured;
+     int policyTenure;
+     String policyPaymentFrequency;
+     String policyPaymentStatus;
     
    
 	
@@ -28,174 +43,177 @@ public class Policy {
 	
      @Override
 	public String toString() {
-		return "Policy [Policy_id=" + Policy_id + ", Policy_number=" + Policy_number + ", nameofPolicy=" + nameofPolicy
-				+ ", Policy_Created_date=" + Policy_Created_date + ", Policy_Due_Date=" + Policy_Due_Date
-				+ ", Policy_Payment_Date=" + Policy_Payment_Date + ", Policy_Status=" + Policy_Status
-				+ ", Policy_Premium_Amount=" + Policy_Premium_Amount + ", Policy_Maturity_Amount="
-				+ Policy_Maturity_Amount + ", Policy_Sum_Assured=" + Policy_Sum_Assured + ", Policy_Tenure="
-				+ Policy_Tenure + ", Policy_Payment_Frequency=" + Policy_Payment_Frequency + ", Policy_Payment_Status="
-				+ Policy_Payment_Status + "]";
+		return "Policy [policyId=" + policyId + ", policyNumber=" + policyNumber + ", nameOfPolicy=" + nameOfPolicy
+				+ ", policyCreatedDate=" + policyCreateDate + ", policyDueDate=" + policyDueDate
+				+ ", policyPaymentDate=" + policyPaymentDate + ", policyStatus=" + policyStatus
+				+ ", policyPremiumAmount=" + policyPremiumAmount + ", policyMaturityAmount="
+				+ policyMaturityAmount + ", policySumAssured=" + policySumAssured + ", policyTenure="
+				+ policyTenure + ", policyPaymentFrequency=" + policyPaymentFrequency + ", policyPaymentStatus="
+				+ policyPaymentStatus + "]";
 	}
 
      
      //constructor
      
-	public Policy(int policy_id, long policy_number,String name, LocalDate policy_Created_date,
-			LocalDate policy_Due_Date, LocalDate policy_Payment_Date, String policy_Status,
-			double policy_Premium_Amount, double policy_Maturity_Amount, double policy_Sum_Assured, int policy_Tenure,
-			String policy_Payment_Frequency, String policy_Payment_Status) {
+	public Policy(int policyId, long policyNumber,String name, LocalDate policyCreateddate,
+			LocalDate policyDueDate, LocalDate policyPaymentDate, String policyStatus,
+			double policyPremiumAmount, double policyMaturityAmount, double policySumAssured, int policyTenure,
+			String policyPaymentFrequency, String policyPaymentStatus) {
 		super();
-		Policy_id = policy_id;
-		Policy_number = policy_number;
-		nameofPolicy = name;
-		Policy_Created_date = policy_Created_date;
-		Policy_Due_Date = policy_Due_Date;
-		Policy_Payment_Date = policy_Payment_Date;
-		Policy_Status = policy_Status;
-		Policy_Premium_Amount = policy_Premium_Amount;
-		Policy_Maturity_Amount = policy_Maturity_Amount;
-		Policy_Sum_Assured = policy_Sum_Assured;
-		Policy_Tenure = policy_Tenure;
-		Policy_Payment_Frequency = policy_Payment_Frequency;
-		Policy_Payment_Status = policy_Payment_Status;
+		this.policyId = policyId;
+		this.policyNumber = policyNumber;
+		nameOfPolicy = name;
+		this.policyCreateddate =policyCreateddate;
+		this.policyPaymentDate = policyPaymentDate;
+		this.policyPaymentDate = policyPaymentDate;
+		this.String policyStatus = String policyStatus;
+		this.policyPremiumAmount= policyPremiumAmount;
+		this.policyMaturityAmount = policyMaturityAmount;
+		this.policySumAssured = policySumAssured;
+		this.policyTenure = policyTenure;
+		this.policyPaymentFrequency= policyPaymentFrequency;
+		this.policyPaymentStatus = policyPaymentStatus;
+	}
+   
+     //getters and setters
+
+	public int getPolicyId() {
+		return policyId;
 	}
 
-	public int getPolicy_id() {
-		return Policy_id;
+	public void setPolicyId(int policyId) {
+		policyId = policyId;
 	}
 
-	public void setPolicy_id(int policy_id) {
-		Policy_id = policy_id;
+	public long getPolicyNumber() {
+		return policyNumber;
 	}
 
-	public long getPolicy_number() {
-		return Policy_number;
+	public void setPolicyNumber(long policyNumber) {
+		policyNumber = policyNumber;
 	}
 
-	public void setPolicy_number(long policy_number) {
-		Policy_number = policy_number;
-	}
-
-	public String getNameofPolicy() {
-		return nameofPolicy;
+	public String getNameOfPolicy() {
+		return nameOfPolicy;
 	}
 
 	public void setNameofPolicy(String nameofPolicy) {
 		this.nameofPolicy = nameofPolicy;
 	}
 
-	public LocalDate getPolicy_Created_date() {
-		return Policy_Created_date;
+	public LocalDate getPolicyCreatedDate() {
+		return policyCreateddate;
 	}
 
-	public void setPolicy_Created_date(LocalDate policy_Created_date) {
-		Policy_Created_date = policy_Created_date;
+	public void setPolicyCreatedDate(LocalDate policyCreatedDate) {
+		policyCreatedDate = policyCreatedDate;
 	}
 
-	public LocalDate getPolicy_Due_Date() {
-		return Policy_Due_Date;
+	public LocalDate getPolicyDueDate() {
+		return policyDueDate;
 	}
 
-	public void setPolicy_Due_Date(LocalDate policy_Due_Date) {
-		Policy_Due_Date = policy_Due_Date;
+	public void setPolicyDueDate(LocalDate policyDueDate) {
+		policyDueDate = policyDueDate;
 	}
 
-	public LocalDate getPolicy_Payment_Date() {
-		return Policy_Payment_Date;
+	public LocalDate getPolicyPaymentDate() {
+		return policyPaymentDate;
 	}
 
-	public void setPolicy_Payment_Date(LocalDate policy_Payment_Date) {
-		Policy_Payment_Date = policy_Payment_Date;
+	public void setPolicy_Payment_Date(LocalDate policyPaymentDate) {
+		policyPaymentDate = policyPaymentDate;
 	}
 
 	public String getPolicy_Status() {
-		return Policy_Status;
+		return policyStatus;
 	}
 
-	public void setPolicy_Status(String policy_Status) {
-		Policy_Status = policy_Status;
+	public void setPolicyStatus(String policyStatus) {
+		policyStatus = policyStatus;
 	}
 
-	public double getPolicy_Premium_Amount() {
-		return Policy_Premium_Amount;
+	public double getPolicyPremiumAmount() {
+		return policyPremiumAmount;
 	}
 
-	public void setPolicy_Premium_Amount(double policy_Premium_Amount) {
-		Policy_Premium_Amount = policy_Premium_Amount;
+	public void setPolicyPremiumAmount(double policyPremiumAmount) {
+		policyPremiumAmount = policyPremiumAmount;
 	}
 
-	public double getPolicy_Maturity_Amount() {
-		return Policy_Maturity_Amount;
+	public double getPolicyMaturityAmount() {
+		return policyMaturityAmount;
 	}
 
-	public void setPolicy_Maturity_Amount(double policy_Maturity_Amount) {
-		Policy_Maturity_Amount = policy_Maturity_Amount;
+	public void setPolicyMaturityAmount(double policyMaturityAmount) {
+		policyMaturityAmount = policyMaturityAmount;
 	}
 
-	public double getPolicy_Sum_Assured() {
-		return Policy_Sum_Assured;
+	public double getPolicySumAssured() {
+		return policySumAssured;
 	}
 
-	public void setPolicy_Sum_Assured(double policy_Sum_Assured) {
-		Policy_Sum_Assured = policy_Sum_Assured;
+	public void setPolicySumAssured(double policySumAssured) {
+		policySumAssured = policySumAssured;
 	}
 
-	public int getPolicy_Tenure() {
-		return Policy_Tenure;
+	public int getPolicyTenure() {
+		return policyTenure;
 	}
 
-	public void setPolicy_Tenure(int policy_Tenure) {
-		Policy_Tenure = policy_Tenure;
+	public void setPolicyTenure(int policyTenure) {
+		policyTenure = policyTenure;
 	}
 
-	public String getPolicy_Payment_Frequency() {
-		return Policy_Payment_Frequency;
+	public String getPolicyPaymentFrequency() {
+		return policyPaymentFrequency;
 	}
 
-	public void setPolicy_Payment_Frequency(String policy_Payment_Frequency) {
-		Policy_Payment_Frequency = policy_Payment_Frequency;
+	public void setPolicyPaymentFrequency(String policyPaymentFrequency) {
+		policyPaymentFrequency = policyPaymentFrequency;
 	}
 
-	public String getPolicy_Payment_Status() {
-		return Policy_Payment_Status;
+	public String getPolicyPaymentStatus() {
+		return policyPaymentStatus;
 	}
 
-	public void setPolicy_Payment_Status(String policy_Payment_Status) {
-		Policy_Payment_Status = policy_Payment_Status;
+	public void setPolicyPaymentStatus(String policyPaymentStatus) {
+		policyPaymentStatus = policyPaymentStatus;
 	}
+
+	// methods generated to fetch the information
 
 	public static Policy getPolicyinfo(Map<Integer,Policy> mapofpolicy,int Policy_id)
      {
-    	 Policy returnPolicy=mapofpolicy.get(Policy_id);
+    	 Policy returnPolicy=mapofpolicy.get(PolicyId);
     	 
     	 return returnPolicy;
      }
      
-     public static String getPolicyStatus(Map<Integer,Policy>mapofpolicy,int Policy_id)
+     public static String getPolicyStatus(Map<Integer,Policy>mapofpolicy,int PolicyId)
      {
-    	    Policy policy=mapofpolicy.get(Policy_id);                                  // Policy policy = Policy.getPolicyinfo(mapofpolicy, Policy_id);
-    	    return policy.getPolicy_Status();
+    	    Policy policy=mapofpolicy.get(Policy_id);                                  // Policy policy = Policy.getPolicyinfo(mapofpolicy, PolicyId);
+    	    return policy.getPolicyStatus();
      }
-	public static String getPaymentStatus(Map<Integer,Policy>mapofpolicy,int Policy_id)
+	public static String getPaymentStatus(Map<Integer,Policy>mapofpolicy,int PolicyId)
         {
-        	Policy policy = Policy.getPolicyinfo(mapofpolicy, Policy_id);
-        	return policy.getPolicy_Payment_Status();
+        	Policy policy = Policy.getPolicyinfo(mapofpolicy, PolicyId);
+        	return policy.getPolicyPaymentStatus();
         }
 
-     public static LocalDate getPaymentduedate(Map<Integer,Policy>mapofpolicy,int Policy_id)
+     public static LocalDate getPaymentduedate(Map<Integer,Policy>mapofpolicy,int PolicyId)
      {
-    	 Policy policy = Policy.getPolicyinfo(mapofpolicy, Policy_id);
-    	 return policy.getPolicy_Due_Date();
+    	 Policy policy = Policy.getPolicyinfo(mapofpolicy, PolicyId);
+    	 return policy.getPolicyDueDate();
      }
    
 
 }
 ----------------------------
+// implementation class
+
 
 import java.util.HashMap;
-
-
-
 import java.util.Map;
 import java.time.LocalDate;
 import java.time.Period;
@@ -208,14 +226,19 @@ public class Tester {
 	public static void main(String args[])
 	{
 		Scanner sc=new Scanner(System.in);
-		Map<Integer,Policy> map=new HashMap<>();
+
+		Map<Integer,Policy> map=new HashMap<>();    // generating map
+
+
+         // passing values through constructor
+
 		Policy object1=new Policy(1, 101,"CarInsurance",  LocalDate.of(2023, 07, 24), LocalDate.of(2024, 6, 24), LocalDate.of(2023, 07, 24), "active", 25000, 100000, 125000, 8, "monthly", "paid");
 		Policy object2=new Policy(2, 102,"BikeInsurance" ,LocalDate.of(2023, 07, 24), LocalDate.of(2023, 7, 24), LocalDate.of(2023, 07, 24), "active", 25000, 100000, 125000, 8, "yearly","pending");
 		Policy object3=new Policy(3, 103,"BusInsurance",   LocalDate.of(2023, 07, 24), LocalDate.of(2023, 07, 30), LocalDate.of(2023, 07, 24), "dormant", 25000, 100000, 125000, 8, "weekly", "pending");
 		Policy object4=new Policy(4, 104,"MercedesInsurance",LocalDate.of(2023, 07, 24),LocalDate.of(2023, 07, 22),LocalDate.of(2023, 07, 24),"inactive", 35000, 100000, 125000, 9, "daily", "pending");
 		Policy object5=new Policy(5, 105,"Astron-Martin-Insurance", LocalDate.of(2023,07, 5),LocalDate.of(2023,07, 5),LocalDate.of(2023,07, 5),"active",2500,10000,12500,9,"monthly","paid");
 		
-		map.put(object1.getPolicy_id(), object1);
+		map.put(object1.getPolicy_id(), object1);   // adding values to map
 		map.put(object2.getPolicy_id(), object2);
 		map.put(object3.getPolicy_id(), object3);
 		map.put(object4.getPolicy_id(), object4);
@@ -228,25 +251,25 @@ public class Tester {
 			
 		
 		
-		Policy obj = Policy.getPolicyinfo(map, Policyid);
+		Policy obj = Policy.getPolicyinfo(map, policyId);  // get policy details
 		
 		System.out.println(obj.toString());
 		
 		System.out.println("Policy  status  is ");
-		String Policystatus=Policy.getPolicyStatus(map, Policyid);
-		System.out.println(Policystatus);
+		String policyStatus=Policy.getPolicyStatus(map, policyId);  // get policy status
+		System.out.println(PolicyStatus);
 		 
 		
 		System.out.println("policy payment status is ");
-		String paymentstatus=Policy.getPaymentStatus(map, Policyid);
-		System.out.println("status of payment is "+paymentstatus);
+		String paymentStatus=Policy.getPaymentStatus(map, PolicyId);   // get policypayment status
+		System.out.println("status of payment is "+paymentStatus);
 		
 		 System.out.println("payment due date is as follows  ");
-		 LocalDate paymentduedate=Policy.getPaymentduedate(map, Policyid);
+		 LocalDate paymentduedate=Policy.getPaymentduedate(map, PolicyId);   // get policy due date
 		 System.out.println("days left are  "+ChronoUnit.DAYS.between(LocalDate.now(),paymentduedate)+"  as on  "+LocalDate.now());
 		 
 		 System.out.println("period remaining is ");
-		 Period periodObj = Period.between(LocalDate.now(), paymentduedate);
+		 Period periodObj = Period.between(LocalDate.now(), paymentduedate);  // get period for due date
 		 int days = periodObj.getDays();
 		 int month=periodObj.getMonths();
 		 int year=periodObj.getYears();
@@ -258,15 +281,15 @@ public class Tester {
 		 System.out.println("Entry not found!! enter new details");
 		
 		  
-		 Policy newpolicy=new Policy(sc.nextInt(),sc.nextLong(),sc.next(),LocalDate.parse(sc.next()),LocalDate.parse(sc.next()),LocalDate.parse(sc.next()),sc.next(),sc.nextDouble(),sc.nextDouble(),sc.nextDouble(),sc.nextInt(),sc.next(),sc.next());
-		 if(map.containsKey(newpolicy.getPolicy_id()))
+		 Policy newPolicy=new Policy(sc.nextInt(),sc.nextLong(),sc.next(),LocalDate.parse(sc.next()),LocalDate.parse(sc.next()),LocalDate.parse(sc.next()),sc.next(),sc.nextDouble(),sc.nextDouble(),sc.nextDouble(),sc.nextInt(),sc.next(),sc.next());
+		 if(map.containsKey(newPolicy.getPolicy_id()))
 		 {
 			 System.out.println("id exists and duplicated ");
 		 }
 		 else
 		 {
 		 
-		 map.put(newpolicy.getPolicy_id(), newpolicy);
+		 map.put(newPolicy.getPolicyId(), newPolicy);      // add new policy
 		 System.out.println("newly entered entry is ");
 		 System.out.println(newpolicy.toString());
 		 
