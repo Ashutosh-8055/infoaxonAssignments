@@ -4,7 +4,7 @@ write a method to print a table
 write a method to check a number is armstrong is not 
 write a method to create a map for different line of business
 -----------------Program 1
-long SumofSalary=addition(number1,number2);
+long sumofSalary=addition(number1,number2);
 
   public long addition(int number1,int number2)
 {
@@ -14,10 +14,10 @@ long SumofSalary=addition(number1,number2);
     
        void day(int date)
           {
-               String[] weekdays={"Sat","Sun","Mon","Tue","Wed","Thurs","Fri"};
+               String[] weekDays={"Sat","Sun","Mon","Tue","Wed","Thurs","Fri"};
                  if(date>0)
                          
-                         System.out.print("Day on  "+date+ "  is " +weekdays[(date%7)]);
+                         System.out.print("Day on  "+date+ "  is " +weekDays[(date%7)]);
                            
                  else
                          System.out.print("input cannot be 0");
@@ -50,28 +50,28 @@ long armstrong(long number)
 public class Main {
     public static void main(String[] args) 
         {
-                       calltoprintMap();
+                       callToPrintMap();
 	 }
    
-     public static Map calltogetmap()
+     public static Map callToGetMap()
             {     
-                  Map<Integer,String> listofbusiness=new HashMap<>();
+                  Map<Integer,String> listOfBusiness=new HashMap<>();
                                   
-                  listofbusiness.put(1,"Bike-Insurance");
-                  listofbusiness.put(2,"Car-Insurance");
-                  listofbusiness.put(3,"health-Insurance");
-                  listofbusiness.put(4,"Mobile-Insurance");
-                  listofbusiness.put(5,"Insurance-AllType");
+                 listOfBusiness.put(1,"Bike-Insurance");
+                 listOfBusiness.put(2,"Car-Insurance");
+                 listOfBusiness.put(3,"health-Insurance");
+                 listOfBusiness.put(4,"Mobile-Insurance");
+                 listOfBusiness.put(5,"Insurance-AllType");
               
-                   return listofbusiness;
+                   return listOfBusiness;
 		
               }    
 
-       public static  void calltoprintMap()
+       public static  void callToPrintMap()
               {
                        Map<Integer,String> getbusinesslist = null ;
                    
-                      getbusinesslist =  calltogetmap();
+                      getbusinesslist =  callToGetMap();
 
                      for(Map.Entry<Integer,String> printmap : getbusinesslist.entrySet())
 
