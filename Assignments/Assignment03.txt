@@ -121,7 +121,7 @@ public class Policy {
 		return policyPaymentDate;
 	}
 
-	public void setPolicy_Payment_Date(LocalDate policyPaymentDate) {
+	public void setPolicyPaymentDate(LocalDate policyPaymentDate) {
 		policyPaymentDate = policyPaymentDate;
 	}
 
@@ -192,7 +192,7 @@ public class Policy {
      
      public static String getPolicyStatus(Map<Integer,Policy>mapofpolicy,int PolicyId)
      {
-    	    Policy policy=mapofpolicy.get(Policy_id);                                  // Policy policy = Policy.getPolicyinfo(mapofpolicy, PolicyId);
+    	    Policy policy=mapofpolicy.get(Policyid);                                  // Policy policy = Policy.getPolicyinfo(mapofpolicy, PolicyId);
     	    return policy.getPolicyStatus();
      }
 	public static String getPaymentStatus(Map<Integer,Policy>mapofpolicy,int PolicyId)
