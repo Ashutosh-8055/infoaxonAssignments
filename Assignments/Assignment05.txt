@@ -54,10 +54,16 @@ Go to the control panel-> custom fileds-> select sites-> Add fileds-> after that
 
 What are different tables used to save the data of custom fields in Liferay?
 ->There are following tables to save the data from custom fields in liferay :->
-a)expandoTable
-b)expandoRow
-c)expandoValue
-d)expandoColumn
+ExpandoTable -The ExpandoTable represents a table or collection of custom fields associated with a specific entity.
+
+ExpandoColumn -The ExpandoColumn represents an individual custom field or attribute within an ExpandoTable.
+	       It defines the data type and properties of the custom field, such as whether it is a text field, date field, numeric field, or other types.
+
+ExpandoRow -The ExpandoRow represents a row or record within an ExpandoTable. 
+	    It holds the actual values of the custom fields defined by the associated ExpandoColumns for a specific entity instance.
+
+ExpandValue -The ExpandoValue represents an individual value stored within an ExpandoRow for a specific ExpandoColumn. 
+
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -65,8 +71,6 @@ What are different important tables in Liferay? Write the tables name and their 
 Following are some important tables in LifeRay :->
 
 assetentry-->  common table which has entry of all the assets in the liferay with basic information for each asset(fileupload,content details etc)
-
-assetpublisher-->to publish asset information. Data from asset-entry is taken to display asset info
 
 backgroundtask-->entry of background tasks in this table
 
@@ -114,7 +118,11 @@ virtualhost-->virtual instance entry
 
 6)What is groupId and companyId in Liferay and what is the use?
 groupId ->groupId is organizational or site id.It's used if you want to separate your data between organization or sites.
-companyId ->companyId is the liferay portal instance id. If you setup liferay to be multi-tenant, this id is used to separate data between the virtual portal.
+Each site, community, organization, or user group in Liferay is assigned a unique groupId 
+
+companyId ->companyId is the liferay portal/virtual instance id. If you setup liferay to be multi-tenant, this id is used to separate data between the virtual portal.The companyId represents a distinct instance. Multiply site may have its own companyId.
+The use of groupId and companyId in Liferay provides a hierarchical and organized structure for managing resources and data within the portal.
+
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

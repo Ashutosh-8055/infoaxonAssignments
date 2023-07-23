@@ -362,13 +362,19 @@ Liferay is an open source enterprise portal and Java-based web application platf
 
 Why we use Liferay?
 Liferay is a modern and secure solution that offers personalization, analytics, and content management all in one place.
-Easy to use & learn
-Feature-rich
-Large community of users
-Free (Community Edition)
-Support for standard technologies
-Extremely flexible in deployment options
+With the help of Liferay we don't have to write code from scratch.
+It offers pre-built components and customizable features that can be used meet specific business needs.
+It supports various content types, such as web pages, blogs, documents, and multimedia, making it convenient for managing and presenting information.
 Mainly, Liferay presents itself as “One Platform. Endless Solutions.” It helps with various kinds of development challenges and is mostly used in B2B and B2E environments. With Liferay, you can create a portal solution tailored exactly for your business.
+
+ How we connect different data bases with Liferay?
+ We can change the database cofigurations in the portal-ext.properties file .
+	Example -
+	jdbc.default.driverClassName=com.mysql.jdbc.Driver
+    	jdbc.default.url=jdbc:mysql://localhost:3306/batchjune2023?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+    	jdbc.default.username=root
+    	jdbc.default.password=root
+
 
 
 
@@ -378,18 +384,22 @@ We cannot directly modify the portal.properties file; instead,we create a separa
 
 
 What is the use of data folder in Liferay home?
-Use to store data so that the path can be stored and linked in the database.
-Stores an embedded HSQL database, DXP’s file repository, and search indexes. The embedded HSQL database is configured by default, but it’s intended for demonstration and trial purposes only. 
+ "data" folder is located in the Liferay installation directory, and it serves as the default location for storing persistent data that is generated or uploaded through the portal.
 
 
 
 What is the use of deploy folder in Liferay home?
-By default, this folder auto-deploys plugins. Auto-deploy supports application .lpkg files from Liferay Marketplace, plugin .war files, and plugin .jar files.
-You can configure an alternative path for the deploy folder by setting the portal property auto.deploy.deploy.dir.
+ When we place the activation key in the deploy folder , liferay reads it automatically . 
+The activation key is basically the paid license for liferay DXP and after the deployment of license it will go to the modules in the osgi folder.
 
 
 
 What is the default data base of Liferay?
 Liferay comes with a default database called “HSQL” or “Hypersonic”
+
+
+What is different versioning technique for a project?
+Community edition and Enterprise edition
+
 
 
