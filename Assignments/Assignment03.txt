@@ -358,6 +358,26 @@ rollno is  2name of student is  name2college is  Oxford
 
 What is Liferay?
 Liferay is an open source enterprise portal and Java-based web application platform provides a toolset for the development of customizable portals and websites.
+Key features and capabilities of Liferay include:
+Content Management: Liferay offers a robust web content management system (WCMS) that allows users to create, organize, and publish content easily. It supports various content types, including articles, documents, images, videos, and more.
+
+User Experience Personalization: Liferay enables personalized user experiences through content targeting and segmentation. Administrators can deliver relevant content and features based on user attributes, behaviors, or other criteria.
+
+Web Application Platform: Liferay serves as a web application platform, supporting the development of custom web applications and the integration of existing applications. It provides a framework for building and deploying portlets, services, and extensions.
+
+Social Collaboration: Liferay includes social collaboration features like blogs, forums, wikis, and social networking, allowing users to interact, share information, and collaborate within the portal.
+
+Headless CMS Support: Liferay offers support for headless content management, allowing developers to build decoupled front-end applications while using Liferay as a content repository.
+
+Integration Capabilities: Liferay integrates with various third-party systems, databases, and applications through its flexible APIs and integration frameworks.
+
+Security and Access Control: Liferay provides robust security features, including role-based access control, single sign-on (SSO), and encryption, to ensure the protection of sensitive data.
+
+Mobile Responsiveness: Liferay is designed with mobile responsiveness in mind, enabling content and applications to adapt to different devices and screen sizes.
+
+Workflow and Approvals: Liferay supports workflow management, allowing content and user interactions to go through approval processes before being published or applied.
+
+Multilingual and Localization Support: Liferay is built to support multiple languages and provides features for creating multilingual sites.
 
 
 Why we use Liferay?

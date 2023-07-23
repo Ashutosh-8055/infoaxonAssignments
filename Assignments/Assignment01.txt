@@ -4,6 +4,7 @@ write a method to print a table
 write a method to check a number is armstrong is not 
 write a method to create a map for different line of business
 -----------------Program 1
+
 long sumofSalary=addition(number1,number2);  // call to method and getting value
 
   public long addition(int number1,int number2) // method declaration and definition
