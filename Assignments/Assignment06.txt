@@ -1,0 +1,283 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Create a List and access all the elements of that list using iterator and foreach loop.
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+class ListExample  // ListExample class 
+{
+       public static void main(String args[])
+       {
+
+       List<String>  cities = new ArrayList<>();  // declaring list object
+      
+       cities.add("Pune");        // adding values in arraylist
+       cities.add("Mumbai");
+       cities.add("Banglore");
+       cities.add("Chennai");
+
+       Iterator<String> iterator = cities.iterator(); // use of iterator method for accessing the arraylist
+      
+       System.out.println("accessing elements using the iterator method ");
+       
+       while(iterator.hasNext())   // iterate the arraylist to print values
+       {
+          System.out.println(iterator.next()+" ");
+       }
+
+      System.out.println("accessing the elements using the for-each loop");
+         
+            for(String city : cities)         // use of foreach loop to access the arraylist
+                {
+                   System.out.println(city+ " ");
+                }
+
+       }
+
+}
+
+output :                                            
+accessing elements using the iterator method
+Pune
+Mumbai
+Banglore
+Chennai
+accessing the elements using the for-each loop
+Pune
+Mumbai
+Banglore
+Chennai
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------    
+
+Create a Set and access all the elements of the set using iterator and foreach loop
+
+
+import java.util.Set;
+import java.util.HashSet;
+import java.util.Iterator;
+
+class SetExample   //class SetExample
+{
+    public static void main(String args[])
+        {
+            Set<String> countries = new HashSet<>();  // creating object of HashSet
+     
+            countries.add("INDIA");   // adding values in hashset
+            countries.add("ISRAEL");
+            countries.add("RUSSIA");
+            countries.add("JAPAN");
+
+           System.out.println("accessing the set using iterator method ");
+           
+            Iterator<String> iterator = countries.iterator();  // using iterator method to access the set
+               while(iterator.hasNext());
+               System.out.println(iterator.next()+" ");
+        }
+
+             System.out.println("accessing the set using for each ");
+             for(String country : countries )  // use of foreach to access set
+                 {
+                    System.out.println(country+" ");
+                 }
+}
+
+
+output: 
+accessing the set using iterator method 
+INDIA
+ISRAEL
+RUSSIA
+JAPAN
+accessing the set using for each
+INDIA
+ISRAEL
+RUSSIA
+JAPAN
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Create a user defined exception and use it in the class.
+
+class MyException extends Exception  //custom exception class
+{
+     public MyException(String msg)
+       {
+           super(msg);
+       }
+}
+
+class ExceptionExample   
+{
+       public static void validate(int age) throws MyException
+        {
+                   if(age<18)   // check for exception
+                   {
+                         throw new MyException("you cannot vote ");
+                   }else
+                     {
+                         System.out.println("Welcome! you can vote ");
+                      }
+                   
+        }
+
+        public static void main(String args[])
+             {
+                   try
+                   {
+                         validate(13);
+                   }catch(MyException e)
+                    {
+                       System.out.println("exception raised is  "+e);
+                    }
+             }
+}
+
+output : exception raised is  MyException: you cannot vote 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Write a method to handle the exception using try catch finally with all the scenarios that discussed.
+
+try with catch
+
+try with finally
+
+try with catch and finally
+
+try with resources
+
+use of throw
+
+use of throws
+
+---------------------------------------------------------------------------------------------------------------
+1)Try with catch Example
+
+class TryCatchExample
+{
+     public static void main(String args[])
+       {
+                 try
+                  {
+                       int result = 55/0;
+                  }catch(ArithmeticException e)
+                    {
+                           System.out.println(e);
+                    }
+       }
+}
+
+
+output : java.lang.ArithmeticException: / by zero
+---------------------------------------------------------------------------------------------------------------
+2)Try with finally
+
+class TryWithFinallyExample
+    {
+         public static void main(String args[])
+            {
+                 try
+                 {
+                      int result=55/11;
+                 }
+                 finally
+                 {
+                     System.out.println(result);
+                     System.out.println("finally block executed ");
+                  }
+            }
+    }
+
+output : 5
+finally block executed 
+---------------------------------------------------------------------------------------------------------------
+3)Try with catch and finally
+
+class TryWithCatchFinallyExample
+{
+          public static void main(String args[])
+            {
+                  try
+                  {
+                          System.out.println("inside try block ");
+                          int result = 25/0;
+                  }catch(ArithmeticException e)
+                      {
+                          System.out.println("exception caught is " +e);
+                      }
+                   finally
+                      {
+                          System.out.println("finally executed ");
+                      }
+            }       
+}
+
+output: inside try block 
+        finally executed
+        java.lang.ArithmeticException: / by zero	
+
+---------------------------------------------------------------------------------------------------------------
+4) Try with resources
+
+public class Resource implements AutoCloseable
+{
+    public Resource()
+       {
+          System.out.println("Resource acquired ");
+       }
+
+    public void doSomething()
+       {
+          System.out.println("utilize the resource ");
+       }
+
+   public void close()
+       {
+          System.out.println("resource closed ");
+       }
+}
+
+class TryWithResourceExample
+{
+     public static void main(String args[])
+      {
+           try(Resource resource= new Resource())
+           {
+               resource.doSomething();
+           }catch(Exception e)
+            {
+                  System.out.println("error occured "+e.getMessage());
+            }
+      }
+}
+
+output :Resource acquired 
+        utilize the resource
+        resource closed
+---------------------------------------------------------------------------------------------------------------
+
+5) use of throw and throws 
+
+class UseOfThrowAndThrows
+{
+    public static void main(String args[])
+      {
+            try
+            {
+                 int result=divisionOfNumbers(10,0);
+                 System.out.println(result);
+            }catch(ArithmeticException e)
+             {
+                     System.out.println("exception raised is "+e.getMessage());
+             }
+      }    
+
+      public static int divisionOfNumbers(int numerator,int denominator) throws ArithmeticException
+           {
+                    if(denominator==0)
+                          throw new ArithmeticException("cannot divide by 0");
+                     return numerator/denominator;
+                       
+           }
+}
+
+
+output : exception raised is cannot divide by 0
+--------------------------------------------------------------------------------------------------------------
