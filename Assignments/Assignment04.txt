@@ -8,6 +8,7 @@ Download the Liferay Dev Studio DXP bundle.
 - Create a folder according to the project name. Inside this folder, create two subfolders: "tomcat" and "workspace". Open LDS (Liferay Dev Studio) and specify the workspace location. Then, open LDS.
 - Download the Liferay Bundle from the Liferay website. Select the 7.4 version of the Liferay bundle. Choose the Liferay DXP 7.4 bundle and extract it into the tomcat folder.
 - Go to the liferay tomcat folder and remove the work folder from the Liferay directory. Inside the liferay tomcat bundle, delete the work and temp folders.
+inside osgi folder selete state folder
 - Start the Liferay Server. Open the Liferay Developer Studio and click on the Servers tab at the bottom. Right-click within the "Servers" tab and select New -> Server. From the list, choose Liferay v7.x and click Next.
 - Configure the Liferay Server. In the server configuration window, provide a name for the server and specify the Liferay bundle directory by clicking the "Browse" button. Navigate to the location where you extracted the Liferay bundle and select the appropriate directory. Click Finish to save the server configuration.
 - Start the Liferay Server in debug mode for developers.
