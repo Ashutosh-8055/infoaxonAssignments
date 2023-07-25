@@ -210,8 +210,9 @@ class TryWithCatchFinallyExample
 }
 
 output: inside try block 
+        java.lang.ArithmeticException: / by zero
         finally executed
-        java.lang.ArithmeticException: / by zero	
+        	
 
 ---------------------------------------------------------------------------------------------------------------
 4) Try with resources
