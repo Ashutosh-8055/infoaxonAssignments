@@ -1,0 +1,268 @@
+Write all the important command of gogo shell to manage the bundle in osgi.
+
+lb (List Bundles):
+This command lists all installed bundles in the OSGi container along with their IDs, states, and symbolic names.
+
+start <bundle-id>:
+This command starts the bundle with the specified ID.
+
+stop <bundle-id>:
+This command stops the bundle with the specified ID.
+
+install <bundle-location>:
+Use this command to install a bundle from the specified location. The location can be a file path or a URL.
+
+uninstall <bundle-id>:
+This command uninstalls the bundle with the specified ID.
+
+update <bundle-id>:
+This command updates the specified bundle by re-installing it.
+
+refresh:
+The refresh command refreshes all installed bundles, updating their states based on changes in their dependencies.
+
+ss (Status Short):
+This command provides a brief status overview of all bundles, showing their IDs and states.
+
+headers <bundle-id>:
+Use this command to display the manifest headers of the bundle with the specified ID.
+
+services: List registered OSGi services.
+
+scr:list: List components managed by Declarative Services (if DS is enabled).
+
+diag <bundle-id>:
+The diag command displays diagnostic information for the bundle with the specified ID, showing its unsatisfied dependencies.
+
+resolve <bundle-id>:
+This command attempts to resolve the specified bundle and its dependencies.
+
+log:
+The log command shows the recent log entries of the OSGi container.
+
+shutdown:
+Use this command to gracefully shutdown the OSGi container.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+What is osgi lifeCycle ?
+
+
+The OSGi (Open Service Gateway Initiative) lifecycle refers to the various states and transitions that a bundle can go through during its existence within an OSGi container. OSGi provides a dynamic module system for Java, allowing bundles to be installed, started, stopped, updated, and uninstalled at runtime without requiring a full application restart.Lifecycle of osgi has following phases :
+
+Installed: The bundle is installed in the OSGi container, but it is not yet resolved. It means the bundle's class files and resources are present in the container, but its dependencies have not been resolved.
+
+Resolved: The bundle's dependencies have been resolved successfully. It means that the required packages from other bundles or the system are available for use.
+
+Start: The bundle is in the process of being started. During this phase, the bundle's BundleActivator (if present) is called, allowing the bundle to execute initialization code.
+
+Active: The bundle has been successfully started and is actively running. It can provide services, register listeners, and participate in OSGi services' dynamics.
+
+Stop: The bundle is in the process of being stopped. The BundleActivator (if present) is called, allowing the bundle to perform cleanup tasks.
+
+Uninstalled: The bundle has been uninstalled from the OSGi container. It is no longer available for use, and its resources and class files have been removed from the container.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+What is liferay portlet lifecycle?
+
+Portlet's Life cycle is managed by a portlet container from its initialization to destroy.portlet lifecycle have the following stages.
+
+1. init()  
+This is the first method which will be triggered when we deploy the portlet in portlet container such as tomcat, jboss or any portlet container. This method will be called only during the deployment of the portlet.
+
+2. render()
+Once you deploy the portlet and add the portlet to your page render() method will be called, this method will process the configured jsp and returns the html content to the portlet.
+
+3. processAction()
+processAction method will be called when we use Action URL in our portlet, usually it is used for form submitting CRUD actions.
+
+4. processEvent()
+processEvent method is part of the JSR 286 portlet specification standards, this method is aimed to execute when an event is raised by another portlet via Inter Portlet Communication (IPC) mechanism.
+
+5. serveResource()
+serveResource method is also part of the JSR 286 portlet specification standards, it will be executed and used for AJAX request handling, we can call this method by creating a Liferay resource URL
+
+6. destroy()
+This is the last method which will be executed when the portlet is undeployed from the portlet container, when this method gets executed we can conclude that the portlet is removed from the portlet container
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Create a custom exception in java.
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+// create custom exception class
+
+class CustomException extends Exception
+{
+      public CustomException(String message)
+         {
+             super(message);
+         }
+}
+
+Class CountryNameClass
+{
+       ArrayList<String> countryNames = new ArrayList<>(Arryas.asList("India","Usa","Russia","Germany","Israel"));  // creating arraylist
+      
+       public void checkCountryNameExits(String countryName) throws CustomException   // if exception generated then throw custom exception
+       {
+              if(countryNames.contains(countryName))
+               {
+                   throw new CustomException(countryName+" already exits  ");          // throwing custom exception for exception generated
+               }
+               else
+                {
+                   countryNames.add(countryName);      // adding element to arraylist
+                   System.out.println(countryName + " is added to the ArrayList");    
+                }
+       }
+
+       public static void main(String args[])
+          {
+               CountryNameClass objectOfCountryNameClass = new  CountryNameClass();  // create object of CountryNameClass
+                 
+              try                                                                    // check for exception
+                 {
+                        objectOfCountryNameClass.checkCountryNameExits("Japan") ;  
+                        objectOfCountryNameClass.checkCountryNameExits("India") ;
+                  }catch(CustomException e)
+                    {
+                         System.out.println("exception occured " +e);              // catch exception generated
+                    }
+          }
+
+}
+
+
+output : Japan is added to the ArrayList
+         exception occured CustomException: India already exists
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Create a map and retrieve the elements from the map.
+
+import java.util.Map;
+import java.util.HashMap;
+
+class MapExample         // class to generate map and retrieve its elements
+{
+       public static void main(String args[])
+       {
+             Map<Integer,String> mapObject = new HashMap<>();   // creating map object
+             
+             mapObject.put(1,"Man");                          // adding values to map
+             mapObject.put(2,"Woman");
+             mapObject.put(3,"Boy");
+             mapObject.put(4,"Girl");
+
+             System.out.println("retrieving map elements ");
+ 
+              for(Integer key : mapObject.keySet())              // retrieving map elements using keySet()
+              {
+                   System.out.println(key.getKey()+" "+key.getValue());
+              }
+
+           
+       }
+}
+
+output : 1 Man
+         2 Woman
+         3 Boy
+         4 Girl
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Create a set to save the details in sorted order.
+
+import java.util.Set;
+import java.util.TreeSet;
+ 
+class SetExample               // class to create a set and get output in sorted order
+{
+     public static void main(String args[])
+      {
+                 Set<String> setObject = new TreeSet<>();            // creating set object
+
+                  setObject.add("Orange");                           // add elements to set
+                  setObject.add("Apple");
+                  setObject.add("Banana");
+                  setObject.add("Grapes");
+
+                  for(String setElement : setObject)                  // retrieving set elements 
+                  {
+                          System.out.println(setElement);
+                  }
+                 
+      }
+}
+
+output : 
+      Apple
+      Banana
+      Grapes
+      Orange
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Create a jsonArray and fetch all the object from the array.
+
+
+import org.json.*;
+
+class JsonArrayExample
+{
+       public static void main(String args[])
+        {
+             JSONArray jsonArray = new JSONArray();               // initializing json array
+             jsonArray.add("apple");                              // adding values to json array
+             jsonArray.add("mango");
+             jsonArray.add("orange");
+ 
+           for(Object object : jsonArray)                          // retrieving json array elements
+             {
+                  System.out.println(object);
+             }    
+ 
+        }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Create a json object and fetch all the elements from that json object.
+
+import org.json.*;  
+
+class JsonObjectClass
+{
+       public static void main(String args[])
+       { 
+              JSONObject jsonObject = new JSONObject();             // creating  json object
+            
+               jsonObject.add("name","Arnav");                      // adding values in key value pair in the json object
+               jsonObject.add("age",25);
+               jsonObject.add("city","Noida");
+               jsonObject.add("isEmployed",true);
+
+               String name =(String)jsonObject.get("name");            // fetching elements from json object
+               int age = (int)jsonObject.get("age");
+               String city = (String)jsonObject.get("city");
+               boolean isEmployed =(boolean) jsonObject.get("isEmployed");
+
+               System.out.println("Name "+name);                     // printing the fetched values
+               System.out.println("Age  "+age); 
+               System.out.println("City "+city);
+               System.out.println("isEmployed "+isEmployed);
+       }
+}
+
+output :
+ Name Arnav
+ Age  25
+City  Noida
+isEmployed True
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
