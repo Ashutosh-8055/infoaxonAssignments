@@ -228,6 +228,11 @@ class JsonArrayExample
         }
 }
 
+output: apple
+        mango
+        orange
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Create a json object and fetch all the elements from that json object.
