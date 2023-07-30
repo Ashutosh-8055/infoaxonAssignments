@@ -215,12 +215,12 @@ class JsonArrayExample
 {
        public static void main(String args[])
         {
-             JSONArray jsonArray = new JSONArray();               // initializing json array
-             jsonArray.add("apple");                              // adding values to json array
-             jsonArray.add("mango");
-             jsonArray.add("orange");
+             JSONArray jsonArray = JSONFactoryUtil.createJSONArray();       // initializing json array
+             jsonArray.put("apple");                                       // adding values to json array
+             jsonArray.put("mango");
+             jsonArray.put("orange");
  
-           for(Object object : jsonArray)                          // retrieving json array elements
+           for(Object object : jsonArray)                                // retrieving json array elements
              {
                   System.out.println(object);
              }    
@@ -238,12 +238,13 @@ class JsonObjectClass
 {
        public static void main(String args[])
        { 
-              JSONObject jsonObject = new JSONObject();             // creating  json object
+              JSONObject jsonObject = JSONFactoryUtil.createJSONObject();
+             
             
-               jsonObject.add("name","Arnav");                      // adding values in key value pair in the json object
-               jsonObject.add("age",25);
-               jsonObject.add("city","Noida");
-               jsonObject.add("isEmployed",true);
+               jsonObject.put("name","Arnav");                      // adding values in key value pair in the json object
+               jsonObject.put("age",25);
+               jsonObject.put("city","Noida");
+               jsonObject.put("isEmployed",true);
 
                String name =(String)jsonObject.get("name");            // fetching elements from json object
                int age = (int)jsonObject.get("age");
