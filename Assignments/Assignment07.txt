@@ -107,7 +107,7 @@ Class CountryNameClass
 {
        ArrayList<String> countryNames = new ArrayList<>(Arryas.asList("India","Usa","Russia","Germany","Israel"));  // creating arraylist
       
-       public void checkCountryNameExits(String countryName) throws CustomException   // if exception generated then throw custom exception
+       public  void checkCountryNameExits(String countryName) throws CustomException   // if exception generated then throw custom exception
        {
               if(countryNames.contains(countryName))
                {
@@ -266,8 +266,8 @@ class JsonObjectClass
 output :
  Name Arnav
  Age  25
-City  Noida
-isEmployed True
+ City  Noida
+ isEmployed True
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
